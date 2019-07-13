@@ -7,9 +7,6 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use LadyBird\StreamImport\Factory;
-use Illuminate\Http\Request;
-
 
 class TestJob implements ShouldQueue
 {
@@ -26,12 +23,11 @@ class TestJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($table,$rules,$data)
+    public function __construct($table, $rules, $data)
     {
         $this->table = $table;
         $this->rules = $rules;
         $this->data = $data;
-        
     }
 
     /**
@@ -41,9 +37,8 @@ class TestJob implements ShouldQueue
      */
     public function handle()
     {
-        foreach($this->data as $chunk) {
+        foreach ($this->data as $chunk) {
             \DB::table($this->table)->insert($chunk->toArray());
         }
     }
-  
 }

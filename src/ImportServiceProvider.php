@@ -14,7 +14,6 @@ class ImportServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        
     }
 
     /**
@@ -24,14 +23,13 @@ class ImportServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
 
         $this->publishes([
-            __DIR__."/config/import.php" => config_path('import.php')
+            __DIR__.'/config/import.php' => config_path('import.php'),
         ]);
 
-        $this->loadMigrationsFrom(__DIR__."/migrations/");
+        $this->loadMigrationsFrom(__DIR__.'/migrations/');
 
         Builder::macro('whereLike', function ($attributes, string $searchTerm) {
             $this->where(function (Builder $query) use ($attributes, $searchTerm) {
@@ -39,7 +37,7 @@ class ImportServiceProvider extends ServiceProvider
                     $query->orWhere($attribute, '=', $searchTerm);
                 }
             });
-        
+
             return $this;
         });
     }

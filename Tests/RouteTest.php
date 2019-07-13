@@ -1,9 +1,11 @@
 <?php
+
 // test-laravel-package-isolated/tests/RouteTest.php
-use LadyBird\StreamImport\ImportServiceProvider; // When testing inside of a Laravel installation, the base class would be Tests\TestCase
+// When testing inside of a Laravel installation, the base class would be Tests\TestCase
+
 class RouteTest extends Orchestra\Testbench\TestCase
 {
-    // Use annotation @test so that PHPUnit knows about the test 
+    // Use annotation @test so that PHPUnit knows about the test
     /** @test */
     // public function visit_test_route()
     // {
@@ -15,9 +17,12 @@ class RouteTest extends Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
-            'LadyBird\StreamImport\ImportServiceProvider'
+            'LadyBird\StreamImport\ImportServiceProvider',
         ];
-    }    // When testing inside of a Laravel installation, this is not needed
+    }
+
+    // When testing inside of a Laravel installation, this is not needed
+
     protected function setUp()
     {
         parent::setUp();
