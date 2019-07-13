@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/ladybirdweb/laravel-importer.svg?branch=master)](https://travis-ci.org/ladybirdweb/laravel-importer)
+[![Build Status](https://travis-ci.org/ladybirdweb/laravel-importer.svg?branch=master)](https://travis-ci.org/ladybirdweb/laravel-importer) [![StyleCI](https://github.styleci.io/repos/190863372/shield?branch=master)](https://github.styleci.io/repos/190863372)
