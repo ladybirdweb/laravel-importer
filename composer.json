@@ -1,0 +1,33 @@
+{
+    "name": "ladybird/streamimport",
+    "require": {
+        "doctrine/dbal": "^2.9",
+        "rodenastyle/stream-parser": "^1.2"
+    },
+    "authors": [
+        {
+            "name": "Phaniraj35",
+            "email": "phaniitng@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ladybird\\StreamImport\\ImportServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ladybird\\StreamImport\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LadyBird\\StreamImport\\Tests\\" : "Tests/" 
+        }
+    }
+}
