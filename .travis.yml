@@ -1,0 +1,13 @@
+language: php
+
+before_install:
+  - mysql -e 'CREATE DATABASE testing;'
+
+install:
+  - composer install
+
+php:
+  - '7.1'
+
+services:
+  - mysql
