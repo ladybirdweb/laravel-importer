@@ -1,0 +1,40 @@
+{
+    "name": "ladybird/laravel-importer",
+    "description": "Import to Database from CSV File",
+    
+    "homepage": "https://github.com/ladybird/laravel-importer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Phaniraj",
+            "email": "phaniraj.k@ladybirdweb.com",
+            "homepage": "https://github.com/Phaniraj35"
+        }
+    ],
+    "require": {
+        "ext-zip": "*",
+        "illuminate/support": "~5",
+        "guzzlehttp/guzzle": "~6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~8",
+        "orchestra/testbench": ">=3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ladybird\\StreamImport\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ladybird\\StreamImport\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ladybird\\StreamImport\\ImportServiceProvider"
+            ]
+        }
+    }
+}
