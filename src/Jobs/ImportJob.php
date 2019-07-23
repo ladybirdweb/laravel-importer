@@ -2,14 +2,11 @@
 
 namespace LWS\Import\Jobs;
 
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Support\Facades\Storage;
-
 
 class ImportJob implements ShouldQueue
 {
@@ -18,7 +15,6 @@ class ImportJob implements ShouldQueue
     protected $closure;
     protected $rows;
     protected $request;
-    
 
     public $timeout = 120;
 
@@ -27,7 +23,7 @@ class ImportJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($closure,$rows,$request)
+    public function __construct($closure, $rows, $request)
     {
         $this->closure = $closure;
         $this->rows = $rows;
@@ -42,9 +38,6 @@ class ImportJob implements ShouldQueue
     public function handle()
     {
         // $this->closure($this->rows,$this->);
-        call_user_func($this->cloasure,$this->rows,$this->request);
+        call_user_func($this->cloasure, $this->rows, $this->request);
     }
-
-   
-  
 }

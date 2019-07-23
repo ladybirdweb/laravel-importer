@@ -48,7 +48,7 @@ class ImportServiceProvider extends ServiceProvider
     {
         return ['import'];
     }
-    
+
     /**
      * Console-specific booting.
      *

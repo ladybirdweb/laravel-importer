@@ -11,10 +11,10 @@ class ClosureJob extends Command implements ShouldQueue
     protected $closure;
     protected $rows;
 
-    public function __construct(\Closure $closure,$rows)
+    public function __construct(\Closure $closure, $rows)
     {
         $serializer = new Serializer();
-        
+
         $serialized = $serializer->serialize($closure);
 
         $this->closure = \Crypt::encryptString($serialized);
