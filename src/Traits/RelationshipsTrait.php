@@ -3,22 +3,21 @@
 namespace LWS\Import\Traits;
 
 use ErrorException;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use ReflectionClass;
 use ReflectionMethod;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 trait RelationshipsTrait
 {
-    public function relationships() {
-
+    public function relationships()
+    {
         $model = new static;
 
         $relationships = [];
 
-        foreach((new ReflectionClass($model))->getMethods(ReflectionMethod::IS_PUBLIC) as $method)
-        {
+        foreach ((new ReflectionClass($model))->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
             if ($method->class != get_class($model) ||
-                !empty($method->getParameters()) ||
+                ! empty($method->getParameters()) ||
                 $method->getName() == __FUNCTION__) {
                 continue;
             }
@@ -29,10 +28,11 @@ trait RelationshipsTrait
                 if ($return instanceof Relation) {
                     $relationships[$method->getName()] = [
                         'type' => (new ReflectionClass($return))->getShortName(),
-                        'model' => (new ReflectionClass($return->getRelated()))->getName()
+                        'model' => (new ReflectionClass($return->getRelated()))->getName(),
                     ];
                 }
-            } catch(ErrorException $e) {}
+            } catch (ErrorException $e) {
+            }
         }
 
         return $relationships;

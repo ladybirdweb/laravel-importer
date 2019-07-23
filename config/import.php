@@ -1,5 +1,5 @@
 <?php
 
 return [
-    "namespace" => "App"
+    'namespace' => 'App',
 ];
