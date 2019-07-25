@@ -91,7 +91,7 @@ class Import extends Controller
         return response()->json($returnArray);
     }
 
-    public function process(Closure $callback)
+    public function processImport(Closure $callback)
     {
         $temp_file_contents = Storage::disk('local')->get($this->saved_file);
         $temp_file_contents = json_decode($temp_file_contents, true);
