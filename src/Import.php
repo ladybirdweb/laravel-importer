@@ -87,7 +87,7 @@ class Import extends Controller
 
         $returnArray['csv_sample_row'] = ($data[0]);
         $returnArray['database_columns'] = (! empty($relationship_array)) ? array_merge(array_unique($db_cols), $relationship_array) : array_unique($db_cols);
-
+        $returnArray['relations'] = $relations;
         return response()->json($returnArray);
     }
 

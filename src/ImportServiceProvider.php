@@ -31,7 +31,7 @@ class ImportServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/import.php', 'import');
+        $this->mergeConfigFrom(__DIR__.'/config/import.php', 'import');
 
         // Register the service the package provides.
         $this->app->singleton('import', function ($app) {
@@ -58,7 +58,7 @@ class ImportServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/import.php' => config_path('import.php'),
+            __DIR__.'/config/import.php' => config_path('import.php'),
         ], 'import.config');
 
         // Publishing the views.
